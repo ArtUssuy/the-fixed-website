@@ -31,7 +31,7 @@ function functions() {
     return gulp.src("src/js/**/*.js")
         .pipe(sourceMaps.init())
         .pipe(babel())
-        .pipe(concat("all.js"))
+        .pipe(concat("functions.js"))
         .pipe(sourceMaps.write("."))
         .pipe(browserSync.stream())
         .pipe(gulp.dest("./common"))
