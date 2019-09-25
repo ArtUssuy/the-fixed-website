@@ -1,0 +1,1 @@
+{"version":3,"sources":["functions.js"],"names":["console","log"],"mappings":";;AAAA,CAAE,YAAM;AAEJA,EAAAA,OAAO,CAACC,GAAR,CAAY,YAAZ;AACH,CAHD","file":"all.js","sourcesContent":["( () => {\n\n    console.log(\"working...\")\n})"]}
