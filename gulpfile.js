@@ -28,6 +28,7 @@ function styles() {
         .pipe(gulp.dest("./common"))
 }
 function functions() {
+    console.log("FUNCTIONS...")
     return gulp.src("src/js/**/*.js")
         .pipe(sourceMaps.init())
         .pipe(babel())

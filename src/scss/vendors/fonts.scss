@@ -1,0 +1,13 @@
+@font-face {
+    font-family: "Calibre Bold";
+    src: url("/media/fonts/CalibreBold.woff") format("woff2");
+}
+
+@font-face {
+    font-family: "Calibre Light";
+    src: url("/media/fonts/CalibreLight.woff") format("woff2");
+}
+
+
+$c-light: "Calibre Light";
+$c-bold: "Calibre Bold";
