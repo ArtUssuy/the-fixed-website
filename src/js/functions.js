@@ -31,30 +31,15 @@
 
     const animateSiteBG = () => {
 
-        const imagesBG = [...(document.getElementsByClassName("bg-image"))]
+        const imagesBG = [...(document.getElementById("bgImages").children)]
 
-        function resolveAfter2Seconds(x) {
-            return new Promise(resolve => {
-              setTimeout(() => {
-                resolve(x);
-              }, 2000);
-            });
-          }
-
-        const changeOpacityAndTransform = (image, index) => {
-            image.style.opacity = 1;
-            image.style.transform = "scale(1, 1)";
-        }
-
-        async imagesBG.map((image, index) => {
-            const x = await resolveAfter2Seconds(10);
-            console.log(x); // 10
-            changeOpacityAndTransform(image, index)
-        })
+        /* 
+            - iterar array HTMLCollection
+                -
+        */
     }
 
 })()
-
 
 /*
 

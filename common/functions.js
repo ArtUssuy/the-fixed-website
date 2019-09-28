@@ -39,16 +39,12 @@ function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
   };
 
   var animateSiteBG = function animateSiteBG() {
-    var imagesBG = _toConsumableArray(document.getElementsByClassName("bg-image"));
+    var imagesBG = _toConsumableArray(document.getElementById("bgImages").children);
+    /* 
+        - iterar array HTMLCollection
+            -
+    */
 
-    var changeOpacityAndTransform = function changeOpacityAndTransform(image, index) {
-      image.style.opacity = 1;
-      image.style.transform = "scale(1, 1)";
-    };
-
-    imagesBG.map(function (image, index) {
-      changeOpacityAndTransform(image, index);
-    });
   };
 })();
 /*

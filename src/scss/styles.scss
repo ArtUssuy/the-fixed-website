@@ -73,7 +73,6 @@ body {
             height: 100%;
             background-size: cover;
             background-position: 50% 50%;
-            opacity: 0;
             transform: scale(1.14, 1.14);
             transition: opacity 1.6s ease-out, transform 7.2s linear;
             &:nth-child(1) {
@@ -82,14 +81,21 @@ body {
             &:nth-child(2) {
                 background-image: url("/media/images/background-site-2.jpg");
             } 
+            &:nth-child(3) {
+                background-image: url("https://instagram.fcgh7-1.fna.fbcdn.net/vp/d04d2ffed52710ada40bea89f307d2dc/5E1D5815/t51.2885-15/sh0.08/e35/s640x640/22500433_1396690177115747_2897655147159093248_n.jpg?_nc_ht=instagram.fcgh7-1.fna.fbcdn.net&_nc_cat=111%20640w,https://instagram.fcgh7-1.fna.fbcdn.net/vp/34ba2280a04f4c525a9e1309907dc674/5E17F5D1/t51.2885-15/sh0.08/e35/s750x750/22500433_1396690177115747_2897655147159093248_n.jpg?_nc_ht=instagram.fcgh7-1.fna.fbcdn.net&_nc_cat=111%20750w,https://instagram.fcgh7-1.fna.fbcdn.net/vp/14b5c81aa7e87be2afcf7f15b4f4a5a7/5E1A53AF/t51.2885-15/e35/22500433_1396690177115747_2897655147159093248_n.jpg?_nc_ht=instagram.fcgh7-1.fna.fbcdn.net&_nc_cat=111%201080w");
+            } 
         }
     }
-
-
 }
 
-/*
+.current {
+    opacity: 1;
+    transform: scale(1, 1);
+    z-index: 2;
+    opacity: 1;
+}
 
-transition: opacity 1.6s ease-out, transform 7.2s linear;
-
-*/
+.hide{
+    opacity: 0;
+    z-index: 1;
+}
