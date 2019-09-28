@@ -1,47 +1,47 @@
-( () => {
+(() => {
 
-    
-    document.addEventListener("DOMContentLoaded", load)
+    const images = [...(document.getElementById("images").children)]
+    let currentImage = ""
+    const randomImage = Math.floor(Math.random() * images.length)
 
-    function load() {
-        setTimeout(animateSiteBG, 1000);
-        setTimeout(animateSiteName, 1200);
+    document.addEventListener("DOMContentLoaded", function() {
+		setTimeout(function() {
+            images[randomImage].classList = " current"
+			start()
+		}, 800)
+    })
+
+
+    function start() {
+		setTimeout(function(){
+            let oldImage = currentImage !== "" ? currentImage : Math.floor(Math.random() * images.length) 
+
+            images.map((image) => {
+                image.classList = ""
+            })
+
+            images[oldImage].classList += " hide"
+            
+			setTimeout(function(){
+                images[oldImage].classList = ""
+            }, 2200)
+            
+            currentImage = randomNext(oldImage)
+            images[currentImage].classList += " current"
+			start()
+
+		}, 3000)
     }
 
-
-
-    /* MY ANIMATIONS */
-    const animateSiteName = () => {
-        const nameLetters = [...(document.getElementsByClassName("letter-name-site"))]
-        const subNameLetters = [...(document.getElementsByClassName("letter-subname-site"))]
-        const subNameSite = document.getElementById("subNameSite")
-        
-        nameLetters.map((letter) => { // animate name
-            letter.style.opacity = 1;
-            letter.style.transform = "scale(1, 1)";
-        })
-
-        subNameLetters.map((letter) => { // animate subname
-            letter.style.opacity = 1;
-        })
-
-        subNameSite.style.opacity = 1; // animate subname wrapper
-        subNameSite.style.marginTop = "20px";
+    function randomNext(oldImage) {
+        let newImage = Math.floor(Math.random() * images.length)
+        if(newImage == oldImage) {
+            while(newImage == oldImage) {
+                newImage = Math.floor(Math.random() * images.length)
+            }
+        } 
+        return newImage
     }
 
-    const animateSiteBG = () => {
-
-        const imagesBG = [...(document.getElementById("bgImages").children)]
-
-        /* 
-            - iterar array HTMLCollection
-                -
-        */
-    }
 
 })()
-
-/*
-
-
-*/

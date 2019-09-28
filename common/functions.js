@@ -9,46 +9,43 @@ function _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.
 function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
 
 (function () {
-  document.addEventListener("DOMContentLoaded", load);
+  var images = _toConsumableArray(document.getElementById("images").children);
 
-  function load() {
-    setTimeout(animateSiteBG, 1000);
-    setTimeout(animateSiteName, 1200);
+  var currentImage = "";
+  var randomImage = Math.floor(Math.random() * images.length);
+  document.addEventListener("DOMContentLoaded", function () {
+    setTimeout(function () {
+      images[randomImage].classList = " current";
+      start();
+    }, 800);
+  });
+
+  function start() {
+    setTimeout(function () {
+      var oldImage = currentImage !== "" ? currentImage : Math.floor(Math.random() * images.length);
+      images.map(function (image) {
+        image.classList = "";
+      });
+      images[oldImage].classList += " hide";
+      setTimeout(function () {
+        images[oldImage].classList = "";
+      }, 2200);
+      currentImage = randomNext(oldImage);
+      images[currentImage].classList += " current";
+      start();
+    }, 3000);
   }
-  /* MY ANIMATIONS */
 
+  function randomNext(oldImage) {
+    var newImage = Math.floor(Math.random() * images.length);
 
-  var animateSiteName = function animateSiteName() {
-    var nameLetters = _toConsumableArray(document.getElementsByClassName("letter-name-site"));
+    if (newImage == oldImage) {
+      while (newImage == oldImage) {
+        newImage = Math.floor(Math.random() * images.length);
+      }
+    }
 
-    var subNameLetters = _toConsumableArray(document.getElementsByClassName("letter-subname-site"));
-
-    var subNameSite = document.getElementById("subNameSite");
-    nameLetters.map(function (letter) {
-      // animate name
-      letter.style.opacity = 1;
-      letter.style.transform = "scale(1, 1)";
-    });
-    subNameLetters.map(function (letter) {
-      // animate subname
-      letter.style.opacity = 1;
-    });
-    subNameSite.style.opacity = 1; // animate subname wrapper
-
-    subNameSite.style.marginTop = "20px";
-  };
-
-  var animateSiteBG = function animateSiteBG() {
-    var imagesBG = _toConsumableArray(document.getElementById("bgImages").children);
-    /* 
-        - iterar array HTMLCollection
-            -
-    */
-
-  };
+    return newImage;
+  }
 })();
-/*
-
-
-*/
 //# sourceMappingURL=functions.js.map
