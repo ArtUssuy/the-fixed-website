@@ -49,5 +49,24 @@ function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
     return newImage;
   } // ********** TITLE FUNCTIONS
 
+
+  document.addEventListener("DOMContentLoaded", function () {
+    var siteName = _toConsumableArray(document.getElementById("site-name").children);
+
+    var siteSubName = _toConsumableArray(document.getElementById("site-subname").children);
+
+    siteName.map(function (letter) {
+      var delayValue = 100 * Math.floor(Math.random() * siteName.length);
+      console.log("".concat(delayValue, "ms"));
+      letter.style.transitionDelay = "".concat(delayValue, "ms");
+      console.log(letter.style);
+      letter.style.opacity = 1;
+      letter.style.transform = "scale(1.3, 1.3)";
+    });
+    siteSubName.map(function (letter) {
+      letter.style.transform = "translate(0, 80px)";
+      letter.style.opacity = 1;
+    });
+  });
 })();
 //# sourceMappingURL=functions.js.map

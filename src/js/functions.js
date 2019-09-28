@@ -46,7 +46,23 @@
 
     // ********** TITLE FUNCTIONS
 
+    document.addEventListener("DOMContentLoaded", function() {
+        const siteName = [...(document.getElementById("site-name").children)]
+        const siteSubName = [...(document.getElementById("site-subname").children)]
+        siteName.map((letter) => {
+            let delayValue = 100 * (Math.floor(Math.random() * siteName.length))
+            console.log(`${delayValue}ms`)
+            letter.style.transitionDelay = `${delayValue}ms`
+            console.log(letter.style)
+            letter.style.opacity = 1
+            letter.style.transform = "scale(1.3, 1.3)"
+        })
+        siteSubName.map((letter) => {
+            letter.style.transform = "translate(0, 80px)"
+            letter.style.opacity = 1
+        })
 
+    })
 
     
 })()
