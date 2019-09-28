@@ -1,5 +1,7 @@
 (() => {
 
+
+    // *********** BG FUNCTIONS
     const images = [...(document.getElementById("images").children)]
     let currentImage = ""
     const randomImage = Math.floor(Math.random() * images.length)
@@ -10,7 +12,6 @@
 			start()
 		}, 800)
     })
-
 
     function start() {
 		setTimeout(function(){
@@ -43,5 +44,9 @@
         return newImage
     }
 
+    // ********** TITLE FUNCTIONS
 
+
+
+    
 })()
