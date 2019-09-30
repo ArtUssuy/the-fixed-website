@@ -57,9 +57,7 @@ function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 
     siteName.map(function (letter) {
       var delayValue = 100 * Math.floor(Math.random() * siteName.length);
-      console.log("".concat(delayValue, "ms"));
       letter.style.transitionDelay = "".concat(delayValue, "ms");
-      console.log(letter.style);
       letter.style.opacity = 1;
       letter.style.transform = "scale(1.3, 1.3)";
     });
@@ -67,6 +65,14 @@ function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
       letter.style.transform = "translate(0, 80px)";
       letter.style.opacity = 1;
     });
-  });
+  }); // ********** click Window
+
+  setTimeout(clickWindow, 2000);
+
+  function clickWindow() {
+    window.addEventListener("click", function () {
+      console.log("scrolling...");
+    });
+  }
 })();
 //# sourceMappingURL=functions.js.map
